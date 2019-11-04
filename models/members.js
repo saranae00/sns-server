@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const { Schema } = mongoose;
 
 const memberSchema = new Schema({
-  id: String,
+  mamberId: String,
   password: String,
   name: String,
   nickName: String,
@@ -32,11 +32,11 @@ memberSchema.methods.serialize = function() {
   return result;
 };
 
-memberSchema.statics.findByMemberId = function(id) {
-  return this.findOne({ id });
+memberSchema.statics.findByMemberId = function(mamberId) {
+  return this.findOne({ mamberId: mamberId });
 };
 
-memberSchema.methods.createToken = function(password) {
+memberSchema.methods.createToken = function() {
   const token = jwt.sign(
     {
       _id: this._id,
