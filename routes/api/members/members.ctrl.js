@@ -43,7 +43,7 @@ exports.join = async (req, res, next) => {
   }
 
   const member = new Member({
-    id: id,
+    mamberId: id,
     nickName: nickName,
     name: name,
     email: email,
@@ -61,15 +61,15 @@ exports.join = async (req, res, next) => {
 
 // 회원 탈퇴
 exports.delete = async (req, res, next) => {
-  const { id } = req.body;
-  await Member.findByIdAndDelete(id).exec();
+  const { _id } = req.body;
+  await Member.findByIdAndDelete(_id).exec();
   res.status(204).send();
 };
 
 // 아이디로 회원 찾기
 exports.findById = async (req, res, next) => {
-  const { id } = req.body;
-  const members = await Member.findById(id).exec();
+  const { _id } = req.body;
+  const members = await Member.findById(_id).exec();
   res.json(members);
 };
 
