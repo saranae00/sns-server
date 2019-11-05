@@ -15,14 +15,14 @@ Member
 const Member = require('../../../models/members');
 
 exports.login = async (req, res, next) => {
-  const { id, password } = req.body;
+  const { memberId, password } = req.body;
   // 입력값에 id나 password가 없을 경우
-  if (!id || !password) {
+  if (!memberId || !password) {
     res.status(401).send();
     return;
   }
 
-  const member = await Member.findByMemberId(id);
+  const member = await Member.findByMemberId(memberId);
   // 계정이 존재하지 않을 경우
   if (!member) {
     res.status(401).send();
