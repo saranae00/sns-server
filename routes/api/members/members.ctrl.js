@@ -25,7 +25,7 @@ exports.list = async (req, res, next) => {
 // 회원 가입
 exports.join = async (req, res, next) => {
   const {
-    id,
+    memberId,
     password,
     nickName,
     name,
@@ -43,7 +43,7 @@ exports.join = async (req, res, next) => {
   }
 
   const member = new Member({
-    memberId: id,
+    memberId: memberId,
     nickName: nickName,
     name: name,
     email: email,
