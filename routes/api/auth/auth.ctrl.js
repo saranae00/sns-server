@@ -39,7 +39,8 @@ exports.login = async (req, res, next) => {
   // 쿠키 설정
   const token = member.createToken();
   res.cookie('access_token', token, {
-    maxAge: 1000 * 60 * 60 * 24 * 2
+    maxAge: 1000 * 60 * 60 * 24 * 2,
+    httpOnly: true
   });
   const result = member.serialize();
   res.json(result);
