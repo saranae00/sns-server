@@ -43,7 +43,7 @@ exports.join = async (req, res, next) => {
   }
 
   const member = new Member({
-    mamberId: id,
+    memberId: id,
     nickName: nickName,
     name: name,
     email: email,
@@ -75,8 +75,8 @@ exports.findById = async (req, res, next) => {
 
 // 멤버 아이디로 회원 찾기
 exports.findByMemberId = async (req, res, next) => {
-  const { mamberId } = req.body;
-  const members = await Member.findOne({ mamberId: mamberId }).exec();
+  const { memberId } = req.body;
+  const members = await Member.findOne({ memberId: memberId }).exec();
   res.json(members);
 };
 

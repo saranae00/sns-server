@@ -48,6 +48,7 @@ exports.login = async (req, res, next) => {
 
 exports.loginChk = async (req, res, next) => {
   const member = req.decoded;
+
   // 로그인 상태가 아닐 때
   if (!member) {
     res.status(401).send();
