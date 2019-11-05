@@ -36,7 +36,7 @@ exports.join = async (req, res, next) => {
   } = req.body;
 
   // 중복 id 검사
-  const exist = await Member.findByMemberId(id);
+  const exist = await Member.findByMemberId(memberId);
   if (exist) {
     res.status(409).send();
     return;
