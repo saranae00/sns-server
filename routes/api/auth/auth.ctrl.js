@@ -25,14 +25,14 @@ exports.login = async (req, res, next) => {
   const member = await Member.findByMemberId(memberId);
   // 계정이 존재하지 않을 경우
   if (!member) {
-    res.status(402).send();
+    res.status(401).send();
     return;
   }
 
   const chkPwd = await member.checkPassword(password);
   // 비밀 번호가 틀린 경우
   if (!chkPwd) {
-    res.status(403).send();
+    res.status(401).send();
     return;
   }
 
