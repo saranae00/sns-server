@@ -8,7 +8,6 @@ const memberSchema = new Schema({
   memberId: String,
   password: String,
   name: String,
-  nickName: String,
   phoneNumber: String,
   email: String,
   followerNum: Number,

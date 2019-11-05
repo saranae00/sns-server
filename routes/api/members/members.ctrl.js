@@ -86,14 +86,6 @@ exports.findByMemberName = async (req, res, next) => {
   const members = await Member.find({ name: name }).exec();
   res.json(members);
 };
-
-// 닉네임으로 회원 찾기
-exports.findByMemberNickName = async (req, res, next) => {
-  const { name } = req.body;
-  const members = await Member.find({ nickName: nickName }).exec();
-  res.json(members);
-};
-
 //  업데이트
 exports.update = async (req, res, next) => {
   const { id } = req.body;

@@ -11,10 +11,6 @@ members.delete('/:id', utils.wrapAsync(membersCtrl.delete));
 members.get('/:id', utils.wrapAsync(membersCtrl.read));
 members.get('/findByMemberId', utils.wrapAsync(membersCtrl.findByMemberId));
 members.get('/findByMemberName', utils.wrapAsync(membersCtrl.findByMemberName));
-members.get(
-  '/findByMemberNickName',
-  utils.wrapAsync(membersCtrl.findByMemberNickName)
-);
 members.patch('/:id', utils.wrapAsync(membersCtrl.update));
 
 module.exports = members;
